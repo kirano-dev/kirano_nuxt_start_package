@@ -1,6 +1,8 @@
 <template>
-    <div class="container-fluid">
-        <p>Навигация сайта</p>
+    <div class="nav">
+        <div class="container-fluid">
+            <p>Навигация сайта</p>
+        </div>
     </div>
 </template>
 
@@ -9,7 +11,4 @@
 </script>
 
 <style scoped lang="scss">
-// Здесь стили навигации сайта
-
-
-</style>
+// Здесь стили навигации сайта</style>
