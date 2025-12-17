@@ -1,4 +1,11 @@
-<!-- Базовый layout -->
 <template>
-    <p>Базовый Layout</p>
+  <Nav />
+  <slot />
+  <Footer />
 </template>
+
+<script setup>
+</script>
+
+<style scoped lang="scss">
+</style>
