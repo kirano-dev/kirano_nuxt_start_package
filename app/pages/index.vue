@@ -4,3 +4,18 @@
     <p class="mt-2">Стартовый Nuxt шаблон KIRANO.</p>
   </div>
 </template>
+
+<script setup>
+// Пример отправки запроса API
+// const { request } = useApi()
+// const data = ref(null)
+// const error = ref(null)
+
+// onMounted(async () => {
+//   try {
+//     data.value = await request('/health')
+//   } catch (e) {
+//     error.value = e
+//   }
+// })
+</script>
