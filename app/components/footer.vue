@@ -1,7 +1,10 @@
 <template>
-    <div class="container-fluid">
-        <p>Футер сайта</p>
+    <div class="footer">
+        <div class="container-fluid">
+            <p>Футер сайта</p>
+        </div>
     </div>
+
 </template>
 
 <script setup>
@@ -9,7 +12,4 @@
 </script>
 
 <style scoped lang="scss">
-// Здесь стили футера
-
-
-</style>
+// Здесь стили футера</style>
