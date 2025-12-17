@@ -1,3 +1,5 @@
 <template>
-    <p>Футер сайта</p>
+    <div class="container-fluid">
+        <p>Футер сайта</p>
+    </div>
 </template>
