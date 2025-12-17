@@ -2,7 +2,7 @@
   <div class="p-6 container-fluid">
     <h1 class="text-3xl font-bold">Главная страница</h1>
     <p class="mt-2">Стартовый Nuxt шаблон KIRANO.</p>
-    <IconUser class="h-6 w-6 text-slate-900" />
+    <IconUser />
   </div>
 </template>
 
