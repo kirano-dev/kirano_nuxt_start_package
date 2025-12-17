@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "about": "О КОМПАНИИ",
+    "services": "УСЛУГИ",
+    "projects": "ПРОЕКТЫ",
+    "licenses": "ЛИЦЕНЗИИ",
+    "partners": "ПАРТНЕРЫ",
+    "news": "НОВОСТИ",
+    "contacts": "КОНТАКТЫ",
+    "serviceItems": {
+      "marketing": "Маркетинг",
+      "dev": "Разработка",
+      "design": "Дизайн"
+    }
+  }
+}

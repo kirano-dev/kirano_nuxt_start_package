@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "about": "ABOUT",
+    "services": "SERVICES",
+    "projects": "PROJECTS",
+    "licenses": "LICENSES",
+    "partners": "PARTNERS",
+    "news": "NEWS",
+    "contacts": "CONTACTS",
+    "serviceItems": {
+      "marketing": "Marketing",
+      "dev": "Development",
+      "design": "Design"
+    }
+  }
+}

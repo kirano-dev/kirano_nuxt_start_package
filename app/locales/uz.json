@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "about": "KOMPANIYA HAQIDA",
+    "services": "XIZMATLAR",
+    "projects": "LOYIHALAR",
+    "licenses": "LITSENZIYALAR",
+    "partners": "HAMKORLAR",
+    "news": "YANGILIKLAR",
+    "contacts": "ALOQA",
+    "serviceItems": {
+      "marketing": "Marketing",
+      "dev": "Dasturlash",
+      "design": "Dizayn"
+    }
+  }
+}
