@@ -12,5 +12,12 @@
       "dev": "Development",
       "design": "Design"
     }
+  },
+  "form": {
+    "name": "Name",
+    "your_name": "Your name",
+    "phone": "Phone",
+    "phone_input": "Enter phone number",
+    "send": "Send"
   }
 }

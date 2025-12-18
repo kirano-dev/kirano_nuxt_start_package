@@ -12,5 +12,12 @@
       "dev": "Dasturlash",
       "design": "Dizayn"
     }
+  },
+  "form": {
+    "name": "Ism",
+    "your_name": "Ismingiz",
+    "phone": "Telefon",
+    "phone_input": "Telefon raqamini kiriting",
+    "send": "Yuborish"
   }
 }

@@ -4,23 +4,23 @@
     @submit.prevent="submit"
   >
     <div>
-      <label class="mb-1 block text-sm text-white/80">Имя</label>
+      <label class="mb-1 block text-sm text-white/80">{{ t("form.name") }}</label>
       <input
         v-model.trim="name"
         type="text"
-        placeholder="Ваше имя"
+        :placeholder="t('form.your_name')"
         class="h-11 w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 text-white placeholder:text-white/40
                outline-none focus:border-white/25 focus:ring-4 focus:ring-white/10"
       />
     </div>
 
     <div>
-      <label class="mb-1 block text-sm text-white/80">Телефон</label>
+      <label class="mb-1 block text-sm text-white/80">{{ t("form.phone") }}</label>
 
       <vue-tel-input
         v-model="phone"
         class="tel !w-full"
-        :inputOptions="{ placeholder: 'Введите номер' }"
+       :inputOptions="{ placeholder: t('form.phone_input') }"
         :dropdownOptions="{ showFlags: true, showDialCodeInSelection: true }"
         :validCharactersOnly="true"
         @validate="onValidate"
@@ -37,7 +37,7 @@
       class="h-11 w-full rounded-xl bg-white font-medium text-zinc-900 transition
              hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
     >
-      <span v-if="!loading">Отправить</span>
+      <span v-if="!loading">{{ t("form.send") }}</span>
       <span v-else>Отправляем…</span>
     </button>
 
@@ -48,6 +48,7 @@
 
 <script setup>
 import { ref } from "vue";
+const { t } = useI18n();
 
 const name = ref("");
 const phone = ref(""); // то, что вводит пользователь
