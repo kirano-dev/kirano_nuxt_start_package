@@ -3,7 +3,9 @@
     <h1 class="text-3xl font-bold">Главная страница</h1>
     <p class="mt-2">Стартовый Nuxt шаблон KIRANO2.</p>
     <IconUser />
-    <LeadFormTel/>
+    <div class="min-h-screen bg-zinc-950 text-white flex items-start justify-center p-6">
+      <LeadFormTel />
+    </div>
   </div>
 </template>
 
