@@ -2,8 +2,12 @@
   <div class="p-6 container-fluid">
     <h1 class="text-3xl font-bold">Главная страница</h1>
     <p class="mt-2">Стартовый Nuxt шаблон KIRANO2.</p>
+    <h2>Пример использования иконок:</h2>
     <IconUser />
-    <div class="min-h-screen bg-zinc-950 text-white flex items-start justify-center p-6">
+    <h2>Пример использования картинок (хранятся в assets):</h2>
+    <img src="@/app/assets/images/main/photo.jpg" alt="Пример изображения" />
+    <h2>Пример использования телефонной формы:</h2>
+    <div class="min-h-[350px] bg-zinc-950 text-white flex items-start justify-center p-6">
       <LeadFormTel />
     </div>
   </div>
