@@ -5,7 +5,5 @@
 </template>
 
 <script setup>
+usePageSeo();
 </script>
-
-<style scoped lang="scss">
-</style>
