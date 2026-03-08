@@ -1,5 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-
 import { resolve } from 'node:path'
 import svgLoader from 'vite-svg-loader'
 
@@ -31,6 +29,6 @@ export default defineNuxtConfig({
     '@app': resolve(__dirname, 'app'),
   },
   vite: {
-    plugins: [svgLoader()],
+    plugins: [svgLoader() as any],
   },
 })
