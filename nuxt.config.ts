@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     vueI18n: './i18n.config.js',
   },
   css: [
-    './app/assets/styles/main.scss',
+    '@/app/assets/styles/main.scss',
   ],
   runtimeConfig: {
     public: {
