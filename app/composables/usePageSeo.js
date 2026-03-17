@@ -54,9 +54,4 @@ export function usePageSeo() {
   watch([() => route.path, () => locale.value], () => {
     refresh()
   })
-
-  console.log('SEO route:', route.path)
-  console.log('SEO locale:', locale.value)
-  console.log('SEO response:', data.value)
-  console.log('SEO error:', error.value)
 }

@@ -6,4 +6,6 @@
 
 <script setup>
 usePageSeo();
+useAnalytics();
+useAnalyticsPageviews();
 </script>
