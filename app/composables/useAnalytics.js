@@ -11,9 +11,21 @@ export function useAnalytics() {
 
   const analytics = computed(() => data.value?.data?.analytics || {})
 
-  const googleAnalytics = computed(() => analytics.value?.google_analytics || '')
-  const yandexMetrika = computed(() => analytics.value?.yandex_metrika || '')
-  const facebookPixel = computed(() => analytics.value?.facebook_pixel || '')
+  function normalizeId(value) {
+    if (value === null || value === undefined) return ''
+    const str = String(value).trim()
+    if (!str || str === 'null' || str === 'undefined') return ''
+    return str
+  }
+
+  const googleAnalytics = computed(() => normalizeId(analytics.value?.google_analytics))
+  const yandexMetrika = computed(() => normalizeId(analytics.value?.yandex_metrika))
+  const facebookPixel = computed(() => normalizeId(analytics.value?.facebook_pixel))
+
+
+  const validFacebookPixel = computed(() =>
+    /^\d+$/.test(facebookPixel.value) ? facebookPixel.value : ''
+  )
 
   useHead(() => {
     const script = []
@@ -68,11 +80,11 @@ export function useAnalytics() {
       })
     }
 
-    if (facebookPixel.value) {
+    if (validFacebookPixel.value) {
       script.push({
         id: 'fb-inline',
         innerHTML: `
-          window.FB_PIXEL_ID = '${facebookPixel.value}';
+          window.FB_PIXEL_ID = '${validFacebookPixel.value}';
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
           n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -81,14 +93,14 @@ export function useAnalytics() {
           t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '${facebookPixel.value}');
+          fbq('init', '${validFacebookPixel.value}');
           fbq('track', 'PageView');
         `,
       })
 
       noscript.push({
         id: 'fb-noscript',
-        innerHTML: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${facebookPixel.value}&ev=PageView&noscript=1" />`,
+        innerHTML: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${validFacebookPixel.value}&ev=PageView&noscript=1" />`,
       })
     }
 
