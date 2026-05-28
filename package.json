@@ -16,7 +16,7 @@
     "vue-tel-input": "^9.5.1"
   },
   "overrides": {
-    "serialize-javascript": "7.0.3"
+    "serialize-javascript": "7.0.5"
   },
   "devDependencies": {
     "@nuxtjs/i18n": "^10.2.1",
