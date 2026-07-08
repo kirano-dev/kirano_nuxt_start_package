@@ -17,14 +17,20 @@
     <div>
       <label class="mb-1 block text-sm text-white/80">{{ t("form.phone") }}</label>
 
-      <vue-tel-input
-        v-model="phone"
-        class="tel !w-full"
-       :inputOptions="{ placeholder: t('form.phone_input') }"
-        :dropdownOptions="{ showFlags: true, showDialCodeInSelection: true }"
-        :validCharactersOnly="true"
-        @validate="onValidate"
-      />
+      <ClientOnly>
+        <VueTelInput
+          v-model="phone"
+          class="tel !w-full"
+          mode="international"
+          defaultCountry="UZ"
+          :autoDefaultCountry="false"
+          :preferredCountries="['UZ', 'RU', 'KZ', 'KG']"
+          :inputOptions="{ placeholder: t('form.phone_input') }"
+          :dropdownOptions="{ showFlags: true, showDialCodeInSelection: true }"
+          :validCharactersOnly="true"
+          @validate="onValidate"
+        />
+      </ClientOnly>
 
       <p v-if="phone && !isValid" class="mt-1 text-xs text-red-300">
         Некорректный номер
@@ -48,6 +54,8 @@
 
 <script setup>
 import { ref } from "vue";
+import { VueTelInput } from "vue-tel-input";
+import "vue-tel-input/vue-tel-input.css";
 const { t } = useI18n();
 
 const name = ref("");
