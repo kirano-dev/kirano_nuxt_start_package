@@ -1,7 +1,7 @@
 <template>
   <form
     class="mx-auto max-w-md space-y-5 rounded-2xl border border-white/10 bg-zinc-900/60 p-6 shadow-lg backdrop-blur"
-    @submit.prevent="submit"
+    @submit.prevent="submit" data-aos="fade-up"
   >
     <div>
       <label class="mb-1 block text-sm text-white/80">{{ t("form.name") }}</label>

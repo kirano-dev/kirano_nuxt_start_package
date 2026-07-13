@@ -1,8 +1,8 @@
 <template>
   <div class="p-6 container-fluid">
-    <h1 class="text-3xl font-bold">Главная страница</h1>
-    <p class="mt-2">Стартовый Nuxt шаблон KIRANO2.</p>
-    <h2>Пример использования иконок:</h2>
+    <h1 class="text-3xl font-bold" data-aos="fade-up">Главная страница</h1>
+    <p class="mt-2" data-aos="fade-up">Стартовый Nuxt шаблон KIRANO2.</p>
+    <h2 data-aos="fade-right">Пример использования иконок:</h2>
     <IconUser />
     <h2>Пример использования картинок (хранятся в assets):</h2>
     <img src="@/app/assets/images/main/photo.jpg" alt="Пример изображения" />
