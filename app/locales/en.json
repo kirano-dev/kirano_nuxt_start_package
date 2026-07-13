@@ -1,12 +1,17 @@
 {
   "nav": {
-    "about": "ABOUT",
-    "services": "SERVICES",
-    "projects": "PROJECTS",
-    "licenses": "LICENSES",
-    "partners": "PARTNERS",
-    "news": "NEWS",
-    "contacts": "CONTACTS",
+    "about": "About",
+    "services": "Services",
+    "products": "Products",
+    "contacts": "Contacts",
+    "news": "News",
+    "allNews": "All News",
+    "articles": "Articles",
+    "events": "Events",
+    "language": "Language",
+    "projects": "Projects",
+    "licenses": "Licenses",
+    "partners": "Partners",
     "serviceItems": {
       "marketing": "Marketing",
       "dev": "Development",
@@ -15,9 +20,9 @@
   },
   "form": {
     "name": "Name",
-    "your_name": "Your name",
+    "your_name": "Your Name",
     "phone": "Phone",
-    "phone_input": "Enter phone number",
+    "phone_input": "Enter your phone number",
     "send": "Send"
   }
 }

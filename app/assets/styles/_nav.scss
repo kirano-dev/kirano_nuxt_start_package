@@ -1,6 +1,235 @@
 .nav {
-  display: flex;
-  background: red;
-  color: white;
-  padding: 20px;
+  @apply relative z-50 w-full bg-red-600 text-white;
+
+  &__inner {
+    @apply flex min-h-[80px] items-center justify-between gap-6;
+  }
+
+  &__logo {
+    @apply relative z-10 flex shrink-0 items-center;
+  }
+
+  &__logo-image {
+    @apply h-10 w-auto object-contain lg:h-12;
+  }
+
+  &__desktop {
+    @apply hidden flex-1 items-center justify-center lg:flex;
+  }
+
+  &__list {
+    @apply flex items-center gap-6 xl:gap-9;
+  }
+
+  &__item {
+    @apply relative;
+  }
+
+  &__link {
+    @apply flex items-center gap-2 border-b border-transparent py-2 text-sm font-medium uppercase tracking-wide text-white transition duration-300 hover:border-white/70 hover:text-white/80;
+
+    &.router-link-active {
+      @apply border-white;
+    }
+  }
+
+  &__item--dropdown {
+    &:hover {
+      .nav__dropdown {
+        @apply visible translate-y-0 opacity-100 pointer-events-auto;
+      }
+    }
+  }
+
+  &__dropdown-button {
+    @apply cursor-pointer bg-transparent;
+  }
+
+  &__dropdown-icon {
+    @apply transition-transform duration-300;
+
+    &--active {
+      @apply rotate-180;
+    }
+  }
+
+  &__dropdown {
+    @apply absolute left-1/2 top-full z-20 mt-2 flex min-w-[220px] -translate-x-1/2 flex-col overflow-hidden rounded-xl border border-black/5 bg-white p-2 text-black shadow-xl transition-all duration-300;
+  }
+
+  &__dropdown-link {
+    @apply rounded-lg px-4 py-3 text-sm font-medium text-gray-800 transition duration-200 hover:bg-gray-100 hover:text-red-600;
+
+    &.router-link-active {
+      @apply bg-red-50 text-red-600;
+    }
+  }
+
+  &__actions {
+    @apply flex shrink-0 items-center gap-3;
+  }
+
+  &__language {
+    @apply relative flex items-center;
+  }
+
+  &__language-select {
+    @apply h-10 cursor-pointer appearance-none rounded-lg border border-white/20 bg-white/10 py-2 pl-3 pr-9 text-sm font-medium uppercase text-white outline-none transition duration-300 hover:bg-white/20 focus:border-white/40 focus:ring-2 focus:ring-white/20;
+
+    option {
+      @apply bg-white text-black;
+    }
+  }
+
+  &__language-icon {
+    @apply pointer-events-none absolute right-3 text-white;
+  }
+
+  &__burger {
+    @apply flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-lg border border-white/20 bg-white/10 transition duration-300 hover:bg-white/20 lg:hidden;
+  }
+
+  &__burger-line {
+    @apply block h-[2px] w-5 rounded-full bg-white;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Мобильное модальное меню
+|--------------------------------------------------------------------------
+*/
+
+.nav-modal {
+  @apply fixed inset-0 z-[100] flex min-h-dvh flex-col overflow-y-auto bg-red-600 text-white;
+
+  &__header {
+    @apply flex min-h-[80px] items-center justify-between border-b border-white/15 px-5 md:px-8;
+  }
+
+  &__logo {
+    @apply flex items-center;
+  }
+
+  &__logo-image {
+    @apply h-10 w-auto object-contain;
+  }
+
+  &__close {
+    @apply flex h-11 w-11 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white transition duration-300 hover:rotate-90 hover:bg-white/20;
+  }
+
+  &__body {
+    @apply flex flex-1 items-center px-5 py-10 md:px-8;
+  }
+
+  &__navigation {
+    @apply w-full;
+  }
+
+  &__list {
+    @apply flex w-full flex-col;
+  }
+
+  &__item {
+    @apply border-b border-white/15;
+  }
+
+  &__link {
+    @apply flex w-full items-center justify-between py-5 text-left text-2xl font-medium uppercase tracking-wide text-white transition duration-300 hover:pl-2 hover:text-white/70 md:text-3xl;
+
+    &.router-link-active {
+      @apply text-white/60;
+    }
+  }
+
+  &__dropdown-button {
+    @apply bg-transparent;
+  }
+
+  &__dropdown-icon {
+    @apply shrink-0 transition-transform duration-300;
+
+    &--active {
+      @apply rotate-180;
+    }
+  }
+
+  &__submenu {
+    @apply flex flex-col gap-1 pb-5 pl-4;
+  }
+
+  &__submenu-link {
+    @apply rounded-lg px-4 py-3 text-base font-medium text-white/70 transition duration-300 hover:bg-white/10 hover:text-white;
+
+    &.router-link-active {
+      @apply bg-white/10 text-white;
+    }
+  }
+
+  &__footer {
+    @apply border-t border-white/15 px-5 py-6 md:px-8;
+  }
+
+  &__language-label {
+    @apply mb-3 block text-xs font-medium uppercase tracking-[0.2em] text-white/60;
+  }
+
+  &__languages {
+    @apply flex flex-wrap gap-2;
+  }
+
+  &__language-button {
+    @apply rounded-lg border border-white/20 px-4 py-2 text-sm font-medium uppercase text-white/70 transition duration-300 hover:bg-white/10 hover:text-white;
+
+    &--active {
+      @apply border-white bg-white text-red-600;
+    }
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Анимации
+|--------------------------------------------------------------------------
+*/
+
+.nav-dropdown-enter-active,
+.nav-dropdown-leave-active {
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-dropdown-enter-from,
+.nav-dropdown-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -8px);
+}
+
+.mobile-menu-enter-active,
+.mobile-menu-leave-active {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.mobile-menu-enter-from,
+.mobile-menu-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.mobile-submenu-enter-active,
+.mobile-submenu-leave-active {
+  overflow: hidden;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.mobile-submenu-enter-from,
+.mobile-submenu-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
 }
